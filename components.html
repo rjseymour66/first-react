@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Components</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+    
+
+    <script type="text/babel">
+
+        class Buttonify extends React.Component {
+            render() {
+                return(
+                    <div>
+                        <button type={this.props.behavior}>{this.props.children}</button>
+                    </div>                        
+                );
+            }
+        }
+
+        class HelloWorld extends React.Component {
+            render() {
+                return <p>Hello, {this.props.greetTarget}!</p>
+            }
+        }
+        class Form extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <label for={this.props.behavior}>{this.props.children}</label>
+                        <input type={this.props.behavior} name={this.props.behavior} id={this.props.behavior}></input>
+                        <button type={this.props.behavior}>{this.props.children}</button>
+                    </div>
+                )
+            }
+        }
+        
+        ReactDOM.render(
+            <div>
+                <HelloWorld greetTarget="Batman"/>
+                <HelloWorld greetTarget="Iron Man"/>
+                <HelloWorld greetTarget="Nicolas Cage"/>
+                <HelloWorld greetTarget="Mega Man"/>
+                <HelloWorld greetTarget="Bono"/>
+                <HelloWorld greetTarget="Catwoman"/>
+                <HelloWorld greetTarget="Ryan Seymour"/>
+            </div>,
+            document.querySelector('#container')
+        );
+        
+        ReactDOM.render(
+            <div>
+                <Buttonify behavior="submit">SEND DATA</Buttonify>
+            </div>,
+            document.querySelector('#button')
+        );
+        
+        ReactDOM.render(
+            <div>
+                <label htmlFor="item">Enter a new item:</label>
+                <input type="text" name="item" id="item"></input>
+                <button type="submit">Add item</button>
+            </div>,
+            document.querySelector('#form')
+        );
+    </script>
+</body>
+</html>

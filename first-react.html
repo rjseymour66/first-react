@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React! React! React!</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #EEE;
+        }
+        #container h1 {
+            font-size: 144px;
+            font-family: sans-serif;
+            color: #0080A8;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <div id="button"></div>
+
+    <div id="form"></div>
+
+    <script type="text/babel">
+        
+        let destination = document.querySelector('#container');
+        ReactDOM.render(
+            <div>
+                <h3><i>Ryan Seymour</i></h3>
+                <h3><i>Iron Man</i></h3>
+                <h3><i>Nicolas Cage</i></h3>
+                <h3><i>Mega Man</i></h3>
+            </div>,
+            destination
+        );
+    </script>
+</body>
+
+</html>

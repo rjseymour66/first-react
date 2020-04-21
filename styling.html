@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling in React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #FFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        let destination = document.querySelector('#container');
+
+        class Letter extends React.Component {
+            render() {
+                let letterStyle = {
+                    padding: 10,
+                    margin: 10,
+                    backgroundColor: this.props.bgColor,
+                    color: "#333",
+                    display: "inline-block",
+                    fontFamily: "monospace",
+                    fontSize: 64,
+                    textAlign: "center"
+                };
+
+                return (
+                    <div style={letterStyle}>
+                        {this.props.children}
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <div>
+                <Letter bgColor="#58B3FF">A</Letter>
+                <Letter bgColor="#FF605F">E</Letter>
+                <Letter bgColor="#FFD53e">I</Letter>
+                <Letter bgColor="#49DD8E">O</Letter>
+                <Letter bgColor="#AE99FF">U</Letter>    
+            </div>,
+            destination
+        )
+    </script>
+
+</body>
+
+</html>
